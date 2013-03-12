@@ -22,11 +22,13 @@ package
 			addChild(cc);
 			st.buttonMode = st.useHandCursor = true;
 			pl.buttonMode = pl.useHandCursor = true;
+			plRe.buttonMode = pl.useHandCursor = true;
 			tost.buttonMode = tost.useHandCursor = true;
 			topl.buttonMode = topl.useHandCursor = true;
 						
 			st.addEventListener(MouseEvent.CLICK, ccStop);
 			pl.addEventListener(MouseEvent.CLICK, ccPlay);
+			plRe.addEventListener(MouseEvent.CLICK, ccReplay);
 			tost.addEventListener(MouseEvent.CLICK, ccGotoStop);
 			topl.addEventListener(MouseEvent.CLICK, ccGotoPlay);
 			
@@ -68,6 +70,10 @@ package
 		private function ccPlay(e:MouseEvent):void
 		{
 			cc.play();
+		}
+		private function ccReplay(e:MouseEvent):void
+		{
+			cc.play(true);
 		}
 		private function ccGotoStop(e:MouseEvent):void
 		{
